@@ -50,8 +50,6 @@ class Team(object):
             # Only load the roster table for now.
             if table.get('id', '') == 'roster':
                 for player in table.find_all('tr'):
-                    name = None
-                    short_name = None
                     for stat in player.find_all('td'):
                         data_stat = stat.get('data-stat', None)
                         if data_stat == self.PLAYER_NAME_STAT:
@@ -61,3 +59,5 @@ class Team(object):
 
                 # Break out once we've found and parsed the regular season stats.
                 break
+
+        soup.decompose()

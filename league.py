@@ -44,6 +44,7 @@ class League(object):
                         if team_name.get('data-stat', '') == 'team_name':
                             for links in team_name.find_all('a'):
                                 short_name = links['href'].split('/')[2]
-                                teams.append(Team(short_name))
+                                teams.append(Team(short_name, year))
 
+        soup.decompose()
         self.teams[year] = teams

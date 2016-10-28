@@ -97,4 +97,5 @@ class Player(object):
                 # Break out once we've found and parsed the regular season stats.
                 break
 
+        soup.decompose()
         self.stats[year] = pd.DataFrame(game_log).set_index(self.DATE_STAT)
