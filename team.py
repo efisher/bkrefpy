@@ -24,6 +24,9 @@ class Team(object):
     def __repr__(self):
         return self.short_name
 
+    def get_short_name(self):
+        return self.short_name
+
     def get_filename_path(self):
         return 'cache/%s-%d.html' % (self.short_name.lower(), self.year)
 
